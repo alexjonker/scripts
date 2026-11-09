@@ -392,7 +392,7 @@ artix-chroot /mnt /bin/bash -c '
     mkdir -p /etc/dinit.d/boot.d
     ln -sf ../NetworkManager /etc/dinit.d/boot.d/NetworkManager
     ln -sf ../elogind /etc/dinit.d/boot.d/elogind
-    ln -sf ../qemu-guest-agent /etc/dinit.d/boot.d/qemu-guest-agent
+    ln -sf ../qemu-ga /etc/dinit.d/boot.d/qemu-ga
 '
 
 # ----------------------------- FINISH ----------------------------------------
