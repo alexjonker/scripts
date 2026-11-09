@@ -9,5 +9,5 @@
 
 ### Artix install script
 ```bash
-curl -fsSL https://raw.githubusercontent.com/alexjonker/scripts/refs/heads/master/artixinstall.sh | sudo bash
+curl -fsSL https://scripts.alexjonker.dev/artixinstall.sh | sudo bash
 ```
