@@ -129,7 +129,7 @@ mount "$BOOT_PART" /mnt/boot
 
 echo ">>> Installing base system"
 
-basestrap /mnt base base-devel dinit elogind-dinit linux linux-firmware sof-firmware \
+basestrap /mnt base base-devel dinit elogind-dinit linux-firmware sof-firmware \
     grub efibootmgr dosfstools \
     networkmanager networkmanager-dinit \
     btrfs-progs sudo vim neofetch \
@@ -355,6 +355,9 @@ EOF
 
 # Step 3: sync all databases with the new config
 artix-chroot /mnt /usr/bin/pacman -Syy
+
+echo ">>> Kernel"
+artix-chroot /mnt /usr/bin/pacman -S --needed --noconfirm linux-cachyos
 
 echo ">>> Initramfs"
 
