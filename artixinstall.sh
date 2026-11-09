@@ -132,7 +132,7 @@ echo ">>> Installing base system"
 basestrap /mnt base base-devel dinit elogind-dinit linux-firmware sof-firmware \
     grub efibootmgr dosfstools \
     networkmanager-dinit \
-    btrfs-progs sudo vim neofetch \
+    btrfs-progs sudo \
     nano fastfetch
 
 # ----------------------------- FSTAB -----------------------------------------
@@ -356,8 +356,8 @@ EOF
 # Step 3: sync all databases with the new config
 artix-chroot /mnt /usr/bin/pacman -Syy
 
-echo ">>> Kernel"
-artix-chroot /mnt /usr/bin/pacman -S --needed --noconfirm linux-cachyos qemu-guest-agent-dinit
+echo ">>> Install kernel and other stuff"
+artix-chroot /mnt /usr/bin/pacman -S --needed --noconfirm linux-cachyos qemu-guest-agent-dinit paru
 
 echo ">>> Initramfs"
 
