@@ -121,7 +121,7 @@ echo ">>> Creating filesystems"
 mkfs.fat -F32 "$BOOT_PART"
 mkfs.btrfs -f "$ROOT_PART"
 
-mount -o compress=zstd "$ROOT_PART" /mnt
+mount -o compress=zstd,discard=async "$ROOT_PART" /mnt
 mkdir -p /mnt/boot
 mount "$BOOT_PART" /mnt/boot
 
