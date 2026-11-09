@@ -133,7 +133,8 @@ basestrap /mnt base base-devel dinit elogind-dinit linux-firmware sof-firmware \
     grub efibootmgr dosfstools \
     networkmanager-dinit \
     btrfs-progs sudo \
-    nano fastfetch
+    nano fastfetch \
+	openssh-dinit
 
 # ----------------------------- FSTAB -----------------------------------------
 
@@ -393,6 +394,7 @@ artix-chroot /mnt /bin/bash -c '
     ln -sf ../NetworkManager /etc/dinit.d/boot.d/NetworkManager
     ln -sf ../elogind /etc/dinit.d/boot.d/elogind
     ln -sf ../qemu-ga /etc/dinit.d/boot.d/qemu-ga
+	ln -sf ../sshd /etc/dinit.d/boot.d/sshd
 '
 
 # ----------------------------- FINISH ----------------------------------------
