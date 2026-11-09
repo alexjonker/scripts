@@ -131,7 +131,7 @@ echo ">>> Installing base system"
 
 basestrap /mnt base base-devel dinit elogind-dinit linux-firmware sof-firmware \
     grub efibootmgr dosfstools \
-    networkmanager networkmanager-dinit \
+    networkmanager-dinit \
     btrfs-progs sudo vim neofetch \
     nano fastfetch
 
@@ -357,7 +357,7 @@ EOF
 artix-chroot /mnt /usr/bin/pacman -Syy
 
 echo ">>> Kernel"
-artix-chroot /mnt /usr/bin/pacman -S --needed --noconfirm linux-cachyos
+artix-chroot /mnt /usr/bin/pacman -S --needed --noconfirm linux-cachyos qemu-guest-agent-dinit
 
 echo ">>> Initramfs"
 
@@ -392,6 +392,7 @@ artix-chroot /mnt /bin/bash -c '
     mkdir -p /etc/dinit.d/boot.d
     ln -sf ../NetworkManager /etc/dinit.d/boot.d/NetworkManager
     ln -sf ../elogind /etc/dinit.d/boot.d/elogind
+    ln -sf ../qemu-guest-agent /etc/dinit.d/boot.d/qemu-guest-agent
 '
 
 # ----------------------------- FINISH ----------------------------------------
